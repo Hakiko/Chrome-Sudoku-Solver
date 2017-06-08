@@ -1,0 +1,28 @@
+{
+   "version" : "1.0",
+   "name" : "Sudoku",
+   "permissions" : [
+      "activeTab",
+      "tabs",
+      "nativeMessaging",
+      "https://ajax.googleapis.com/",
+      "http://*/*",
+      "https://*/*"
+   ],
+   "browser_action": {
+      "default_icon" : "icon.png"
+   },
+   "background": {
+      "scripts": ["main.js"],
+      "persistent": false
+   },
+   "content_scripts": [
+       {
+           "matches": ["http://*/*", "https://*/*"],
+           "js": ["content.js"],
+           "all_frames": true
+       }
+   ],
+   "description" : "Sudoku filler.",
+   "manifest_version" : 2
+}
